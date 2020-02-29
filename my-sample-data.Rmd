@@ -51,6 +51,8 @@ stage1_sch <- inner_join(full_admin_1, stage1_schids)
 stage1_tch <- inner_join(full_tch_1, stage1_schids) %>% filter(grade9 == 0)
 stage1_stu <- inner_join(full_stu_1, stage1_stuids)
 stage1_prt <- inner_join(full_prt_1, stage1_stuids)
+
+#Jim: Great use of joins, Claire!
 ```
 
 ```{r, results="asis"}
@@ -80,6 +82,8 @@ stage_1 <- stage_1 %>%
          tch_bachelor = (tch_edu1+tch_edu2),
          tch_advanced = (tch_up1+tch_up2+tch_up3),na.rm=T) %>% 
   select(schids, fall, region, urbanicity, computers, books, enrollment, tch_bachelor, tch_advanced)
+
+#Jim: Hey Claire, I'm having an error running the last code function in this chunk. The error keeps telling me that I can't recode the the object because it is an object of class. 
 ```
 
 The table below shows some characteristics for these 55 schools such as the survey time (2013 fall or 2014 spring), region (east, middle, or west China), urbanicity (5 levels), number of computers and books available to students, enrollment, number of teachers having bachelor degree and up, and number of teachers whose professional status are advanced and up.
@@ -119,6 +123,8 @@ random_even_sch <- left_join(r1_tch, r1) %>%
          random_even_placement = random1) %>% 
   distinct() %>% 
   filter(schids != 64)
+
+#Jim: Similar to the chunk above, I'm having trouble running this code because of an error in the recode function. I'm not positive what's causing it. It may be a good idea to talk to Daniel about it. 
 ```
 
 
@@ -170,6 +176,8 @@ stu_chrct <- stu_1 %>%
          financial_3c = recode(financial_3c, '1' = "Poor", '2' = "Middle", '3' = "Rich"),
          financial_5c = recode(financial_5c, '1' = "Very poor", '2' = "Poor", '3' = "Middle", '4' = "Rich", '5' = "Very rich")) %>% 
   drop_na()
+
+#Jim: I'm unable to get this code chunk to run. I think it might be a problem within the mutate portion of the code chunk.
 ```
 
 
@@ -273,4 +281,5 @@ Here is the point I get stuck - the plots do not answer the question whether the
 #### Stage 3: I was wondering whether I need to continue refining my sample. It is already much smaller than I expect.
 
 
-
+Jim Feedback: 
+Hey Claire I think you're off to a great start! I had some trouble running a few code chunks in the my-sample-data rmd file, but I'd be happy to chat with you in class about it. And if it's running on your end then disregard. I really like the plot in the ceps-data-inspection rmd file. I left a few suggestions about some changes you can make, but overall I think it looks great and you've done such a great job so far!

@@ -60,6 +60,7 @@ full_id <- full_join(full_join(w1_only, w2_only), w1_w2) %>%
 ggplot(full_id, aes(x = participate, y = n, fill = Frame))+
   geom_col(position = "dodge", color = "white")+
   theme_minimal()+
+  coord_flip() +
   scale_fill_OkabeIto(darken = 0.1, alpha = 0.8)+
   geom_text(aes(label = n), 
             position = position_dodge(width = 0.9), 
@@ -69,6 +70,8 @@ ggplot(full_id, aes(x = participate, y = n, fill = Frame))+
        y = "Number of Students",
        title = "A Glance at Student Number in CEPS Full Data",
        caption = "Frame 1: 15 counties from 2870 in nation; Frame 2: 3 counties from 31 in Shanghai area; Frame 3: 10 counties from 120 migrant workers concentrated counties")
+
+#Jim: Really nice job on this plot, Claire! I think the use of geom_text and OkabeIto is really helpful. One suggestion I have is to incorporate coord_flip() the way Daniel tends to do in class. That may make comparison of the bars easier. I wonder if you could also facet_wrap by the wave numbers? Just some suggestions! 
 ```
 
 Notice that the 112 schools selected into the full data come from three sampling frames: frame 1 contains 6o schools from 15 counties out of 2870 in the nation, frame 2 contains 3 counties out of 31 in Shanghai area, and frame 3 contains 10 counties from 120 migrant workers concentrated counties. In other words, frame 2 and 3 are supplementary subsamples serving for particular study purpose focusing on student subgroups in Shanghai and from migrant worker families. However, for the generalization purpose of my research, I am more interested in schools from the core sampling frame - frame 1. Please find more details in "My Sample Data" page.
